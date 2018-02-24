@@ -10,13 +10,17 @@ from pycoin.tx.Tx import Tx
 from pycoin.tx.tx_utils import create_tx, sign_tx
 from pycoin.key.validate import is_address_valid
 from pycoin.cmds import ku
-import Wallet
+import wallet
 
 from smtplib import SMTP_SSL
 import sqlite3
+import os
 
-# FIX ME -- there is probably a much better way to do this
-WALLET_KEYS = 'var/wallet_keys.sqlite3'
+#FIX ME: probably a horribly wrong way to do this
+import wallet
+
+# FIX ME -- this is dirty and hardcoded and only works with wallet_app
+WALLET_KEYS = wallet.app.config['DATABASE_FILENAME']
 
 
 def set_wallet_keys_location(file_path):
