@@ -6,5 +6,5 @@
 *~
 .DS_Store
 __pycache__/
-env/
+env_app/
 var/
